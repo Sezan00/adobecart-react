@@ -2,8 +2,10 @@ import React from 'react';
 import { Search, ShoppingCart, User } from 'lucide-react';
 import AccountDropdown from '../Component/AccountDropdown';
 const AdobeshirtHome = () => {
-    const user = localStorage.getItem('token');
-    console.log(user)
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    console.log(token);
+    console.log(user);
     const products = Array(6).fill({
         name: "Premium Biryani Masala - 40g | Rich Aroma &...",
         price: "40",
