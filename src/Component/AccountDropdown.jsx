@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react'
 import { User, Settings, ShoppingBag, LogIn, LogOut } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 export const AccountDropdown = () => {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef(null);
-
+    const navigate = useNavigate();
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -63,7 +64,7 @@ export const AccountDropdown = () => {
                 {/* Items */}
                 <div className="flex flex-col">
 
-                    <div className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer transition text-black">
+                    <div onClick={()=>navigate('/manage-account')} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer transition text-black">
                     <Settings size={18} className="text-black" />
                     <span>Manage My Account</span>
                     </div>
